@@ -1,5 +1,5 @@
 # [Wonderland Frontend](https://app.wonderland.money/)
-This is the front-end repo for Wonderland. 
+This is the front-end repo for MetaDao. 
 
 ##  🔧 Setting up Local Development
 
@@ -11,7 +11,7 @@ Required:
 
 ```bash
 git clone https://github.com/Wonderland-Money/wonderland-frontend.git
-cd wonderland-frontend
+cd metadao-frontend
 yarn install
 npm run start
 ```
