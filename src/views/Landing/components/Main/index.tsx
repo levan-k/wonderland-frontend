@@ -6,6 +6,9 @@ import { trim } from "../../../../helpers";
 import "./main.scss";
 import { IReduxState } from "../../../../store/slices/state.interface";
 import MetaDaoBg1 from "../../../../assets/icons/metadao-landing-bg1.png";
+import MetaDaoBg2 from "../../../../assets/icons/metadao-landing-bg2.png";
+import MetaDaoBg3 from "../../../../assets/icons/metadao-landing-bg3.png";
+import MetaDaoBg4 from "../../../../assets/icons/metadao-landing-bg4.png";
 import AvawareLog from "../../../../assets/icons/avaware.png";
 
 function Main() {
@@ -103,6 +106,34 @@ function Main() {
                         </div>
                     </Grid>
                 </Grid>
+            </div>
+            <div className="landing-main-metadao-summary-wrap">
+                <div className="landing-main-metadao-summary-item">
+                    <img src={MetaDaoBg2} alt="bg" />
+                    <div className="landing-main-help-text-wrap">
+                        <p>MetaDAO offers currently different types of assets that can be used to mint META on its website:</p>
+                        <p>
+                            <span>META-MIM LP</span>
+                            <span>META-AVAX LP</span>
+                            <span>AVE-AVAX LP</span>
+                        </p>
+                    </div>
+                </div>
+                <div className="landing-main-metadao-summary-item">
+                    <div className="landing-main-help-text-wrap">
+                        <p>The calculator is an eye-catching visual display of the possible gain you could have using MetaDAO.</p>
+                    </div>
+                    <img src={MetaDaoBg3} alt="bg" />
+                </div>
+                <div className="landing-main-metadao-summary-item">
+                    <img src={MetaDaoBg4} alt="bg" />
+                    <div className="landing-main-help-text-wrap">
+                        <p>
+                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or
+                            randomised words which don't look even slightly believable.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     );
