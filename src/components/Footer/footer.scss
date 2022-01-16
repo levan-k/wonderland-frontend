@@ -1,0 +1,38 @@
+.footer-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: #000000;
+  padding: 22px 5% 22px 61px;
+  z-index: 100;
+
+  .social-row {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    a {
+      margin-right: 12px;
+      &:hover {
+        transform: scale(1.1);
+      }
+      img {
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .footer-wrap {
+    flex-direction: column;
+    justify-content: center;
+    padding: 22px;
+
+    .footer-logo {
+      order: -1;
+      margin-bottom: 12px;
+    }
+  }
+}

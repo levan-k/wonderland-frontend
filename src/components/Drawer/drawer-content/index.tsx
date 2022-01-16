@@ -1,18 +1,17 @@
 import { useCallback, useState } from "react";
 import { NavLink } from "react-router-dom";
-import Social from "./social";
-import StakeIcon from "../../../assets/icons/stake.svg";
-import BondIcon from "../../../assets/icons/bond.svg";
-import WonderlandIcon from "../../../assets/icons/wonderland-nav-header.svg";
-import DashboardIcon from "../../../assets/icons/dashboard.svg";
+import StakeIcon from "../../../assets/icons/stake.png";
+import BondIcon from "../../../assets/icons/bond.png";
+import MetadaoIcon from "../../../assets/icons/metadao-nav-header.png";
+import DashboardIcon from "../../../assets/icons/dashboard.png";
+import CompanyIcon from "../../../assets/icons/company.png";
 import { trim, shorten } from "../../../helpers";
 import { useAddress } from "../../../hooks";
 import useBonds from "../../../hooks/bonds";
 import { Link } from "@material-ui/core";
 import { Skeleton } from "@material-ui/lab";
 import "./drawer-content.scss";
-import DocsIcon from "../../../assets/icons/stake.svg";
-import GlobeIcon from "../../../assets/icons/wonderglobe.svg";
+import GlobeIcon from "../../../assets/icons/calculator.png";
 import classnames from "classnames";
 
 function NavContent() {
@@ -41,7 +40,7 @@ function NavContent() {
         <div className="dapp-sidebar">
             <div className="branding-header">
                 <Link href="https://wonderland.money" target="_blank">
-                    <img alt="" src={WonderlandIcon} />
+                    <img alt="" src={MetadaoIcon} />
                 </Link>
 
                 {address && (
@@ -99,7 +98,7 @@ function NavContent() {
                     </Link>
 
                     <div className="bond-discounts">
-                        <p>Mint discounts</p>
+                        <p>Mint Offers</p>
                         {bonds.map((bond, i) => (
                             <Link component={NavLink} to={`/mints/${bond.name}`} key={i} className={"bond"}>
                                 {!bond.bondDiscount ? (
@@ -107,7 +106,7 @@ function NavContent() {
                                 ) : (
                                     <p>
                                         {bond.displayName}
-                                        <span className="bond-pair-roi">{bond.bondDiscount && trim(bond.bondDiscount * 100, 2)}%</span>
+                                        {/* <span className="bond-pair-roi">{bond.bondDiscount && trim(bond.bondDiscount * 100, 2)}%</span> */}
                                     </p>
                                 )}
                             </Link>
@@ -130,15 +129,20 @@ function NavContent() {
                 </div>
             </div>
             <div className="dapp-menu-doc-link">
-                <Link href="https://wonderland.gitbook.io/wonderland/" target="_blank">
-                    <img alt="" src={DocsIcon} />
+                <div className="dapp-menu-item">
+                    <img alt="" src={CompanyIcon} />
+                    <p>Company</p>
+                </div>
+                <Link href="https://blog.com" target="_blank">
+                    <p>Blog</p>
+                </Link>
+                <Link href="https://avaware.network" target="_blank">
+                    <p>Avaware</p>
+                </Link>
+                <Link href="https://medium.com" target="_blank">
                     <p>Docs</p>
                 </Link>
-                <Link href="https://legacy.wonderland.money/" target="_blank">
-                    <p>Legacy website</p>
-                </Link>
             </div>
-            <Social />
         </div>
     );
 }
