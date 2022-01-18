@@ -14,6 +14,7 @@ function Dashboard() {
 
     return (
         <div className="dashboard-view">
+            <div className="dashboard-view-title">Dashboard</div>
             <div className="dashboard-infos-wrap">
                 <Zoom in={true}>
                     <Grid container spacing={4}>

@@ -103,48 +103,8 @@ function Stake() {
                     <Grid className="stake-card-grid" container direction="column" spacing={2}>
                         <Grid item>
                             <div className="stake-card-header">
-                                <p className="stake-card-header-title">TIME Staking (🎩, 🎩)</p>
+                                <p className="stake-card-header-title">Stake META</p>
                                 <RebaseTimer />
-                            </div>
-                        </Grid>
-
-                        <Grid item>
-                            <div className="stake-card-metrics">
-                                <Grid container spacing={2}>
-                                    <Grid item xs={12} sm={4} md={4} lg={4}>
-                                        <div className="stake-card-apy">
-                                            <p className="stake-card-metrics-title">APY</p>
-                                            <p className="stake-card-metrics-value">
-                                                {stakingAPY ? <>{new Intl.NumberFormat("en-US").format(Number(trimmedStakingAPY))}%</> : <Skeleton width="150px" />}
-                                            </p>
-                                        </div>
-                                    </Grid>
-
-                                    <Grid item xs={6} sm={4} md={4} lg={4}>
-                                        <div className="stake-card-tvl">
-                                            <p className="stake-card-metrics-title">TVL</p>
-                                            <p className="stake-card-metrics-value">
-                                                {stakingTVL ? (
-                                                    new Intl.NumberFormat("en-US", {
-                                                        style: "currency",
-                                                        currency: "USD",
-                                                        maximumFractionDigits: 0,
-                                                        minimumFractionDigits: 0,
-                                                    }).format(stakingTVL)
-                                                ) : (
-                                                    <Skeleton width="150px" />
-                                                )}
-                                            </p>
-                                        </div>
-                                    </Grid>
-
-                                    <Grid item xs={6} sm={4} md={4} lg={4}>
-                                        <div className="stake-card-index">
-                                            <p className="stake-card-metrics-title">Current Index</p>
-                                            <p className="stake-card-metrics-value">{currentIndex ? <>{trim(Number(currentIndex), 2)} TIME</> : <Skeleton width="150px" />}</p>
-                                        </div>
-                                    </Grid>
-                                </Grid>
                             </div>
                         </Grid>
 
@@ -278,6 +238,46 @@ function Stake() {
                                 </div>
                             )}
                         </div>
+
+                        <Grid item>
+                            <div className="stake-card-metrics">
+                                <Grid container spacing={2}>
+                                    <Grid item xs={12} sm={4} md={4} lg={4}>
+                                        <div className="stake-card-apy">
+                                            <p className="stake-card-metrics-title">APY</p>
+                                            <p className="stake-card-metrics-value">
+                                                {stakingAPY ? <>{new Intl.NumberFormat("en-US").format(Number(trimmedStakingAPY))}%</> : <Skeleton width="150px" />}
+                                            </p>
+                                        </div>
+                                    </Grid>
+
+                                    <Grid item xs={6} sm={4} md={4} lg={4}>
+                                        <div className="stake-card-tvl">
+                                            <p className="stake-card-metrics-title">TVL</p>
+                                            <p className="stake-card-metrics-value">
+                                                {stakingTVL ? (
+                                                    new Intl.NumberFormat("en-US", {
+                                                        style: "currency",
+                                                        currency: "USD",
+                                                        maximumFractionDigits: 0,
+                                                        minimumFractionDigits: 0,
+                                                    }).format(stakingTVL)
+                                                ) : (
+                                                    <Skeleton width="150px" />
+                                                )}
+                                            </p>
+                                        </div>
+                                    </Grid>
+
+                                    <Grid item xs={6} sm={4} md={4} lg={4}>
+                                        <div className="stake-card-index">
+                                            <p className="stake-card-metrics-title">Current Index</p>
+                                            <p className="stake-card-metrics-value">{currentIndex ? <>{trim(Number(currentIndex), 2)} TIME</> : <Skeleton width="150px" />}</p>
+                                        </div>
+                                    </Grid>
+                                </Grid>
+                            </div>
+                        </Grid>
                     </Grid>
                 </div>
             </Zoom>
